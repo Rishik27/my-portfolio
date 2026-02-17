@@ -87,7 +87,7 @@ const Contact = () => {
               <div className="info-icon">💼</div>
               <h3>LinkedIn</h3>
               <a 
-                href="https://linkedin.com/in/rishikvadapalli-9232b3198" 
+                href="https://www.linkedin.com/in/rishik-vadapalli-9232b3198/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="info-link"
