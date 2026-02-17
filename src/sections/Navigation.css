@@ -62,7 +62,7 @@
   padding: 0.75rem 1.25rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #8892b0;
+  color: #8892b0 !important;
   background: transparent;
   border: none;
   border-radius: 8px;
@@ -85,7 +85,7 @@
 
 .nav-link:hover,
 .nav-link.active {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .nav-link:hover::before,
@@ -94,7 +94,7 @@
 }
 
 .nav-link.active {
-  color: #4ecdc4;
+  color: #4ecdc4 !important;
 }
 
 .nav-cta {
@@ -105,7 +105,7 @@
   padding: 0.75rem 1.5rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #4ecdc4;
+  color: #4ecdc4 !important;
   background: transparent;
   border: 2px solid #4ecdc4;
   border-radius: 8px;

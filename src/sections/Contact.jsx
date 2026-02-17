@@ -72,7 +72,6 @@ const Contact = () => {
               <p className="info-company">S&P Global</p>
             </div>
 
-            {/* Email card - NO target="_blank" on mailto links */}
             <div className="info-card">
               <div className="info-icon">📧</div>
               <h3>Email</h3>
@@ -88,7 +87,7 @@ const Contact = () => {
               <div className="info-icon">💼</div>
               <h3>LinkedIn</h3>
               <a 
-                href="https://www.linkedin.com/in/rishikvadapalli-9232b3198" 
+                href="https://linkedin.com/in/rishikvadapalli-9232b3198" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="info-link"
@@ -110,43 +109,6 @@ const Contact = () => {
               </a>
             </div>
 
-            <div className="social-links">
-              <h3>Connect With Me</h3>
-              <div className="social-icons">
-
-                {/* Email icon - NO target="_blank" */}
-                <a
-                  href="mailto:rishik@itjobworks.com"
-                  className="social-icon"
-                  title="Email"
-                >
-                  <span>✉️</span>
-                </a>
-
-                {/* LinkedIn */}
-                <a
-                  href="https://www.linkedin.com/in/rishikvadapalli-9232b3198"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon"
-                  title="LinkedIn"
-                >
-                  <span>💼</span>
-                </a>
-
-                {/* GitHub */}
-                <a
-                  href="https://github.com/Rishik27"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="social-icon"
-                  title="GitHub"
-                >
-                  <span>💻</span>
-                </a>
-
-              </div>
-            </div>
           </div>
 
           <div className="contact-form-wrapper">
