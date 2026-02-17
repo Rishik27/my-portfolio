@@ -10,7 +10,6 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      // Update active section based on scroll position
       const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
@@ -48,7 +47,7 @@ const Navigation = () => {
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
         <div className="nav-logo" onClick={() => scrollToSection('home')}>
-          <span className="logo-text">{'<YourName />'}</span>
+          <span className="logo-text">{'<RishikV />'}</span>
         </div>
 
         <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
@@ -68,7 +67,7 @@ const Navigation = () => {
           ))}
           <li className="nav-item nav-cta">
             <a 
-              href="/resume.pdf" 
+              href="/my-portfolio/resume.pdf" 
               className="resume-btn"
               target="_blank"
               rel="noopener noreferrer"

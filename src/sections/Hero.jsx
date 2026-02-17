@@ -7,7 +7,7 @@ const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const roles = ['Full Stack Developer', 'React Specialist', 'Cloud Engineer', 'Problem Solver'];
+  const roles = ['Full Stack Developer'];
 
   useEffect(() => {
     const handleTyping = () => {
@@ -49,9 +49,9 @@ const Hero = () => {
       
       <div className="hero-content">
         <div className="hero-text">
-          <span className="hero-greeting">Hello!</span>
+          <span className="hero-greeting">Hey there! 👋</span>
           <h1 className="hero-title">
-            I am <span className="highlight">Rishik Vadapalli</span>
+            I'm <span className="highlight">Rishik Vadapalli</span>
           </h1>
           <div className="hero-subtitle">
             <span className="typing-text">{displayText}</span>
@@ -80,13 +80,11 @@ const Hero = () => {
 
         <div className="hero-image-container">
           <div className="hero-image-wrapper">
-            {/* Use public folder path - easier and more reliable */}
             <img 
-              src="/profile.jpeg" 
+              src="/my-portfolio/profile.jpeg"
               alt="Rishik Vadapalli" 
               className="hero-image"
               onError={(e) => {
-                // Fallback if image doesn't load
                 e.target.style.display = 'none';
                 e.target.parentElement.innerHTML = '<div class="image-placeholder">RV</div>';
               }}
