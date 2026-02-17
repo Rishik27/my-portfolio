@@ -1,41 +1,53 @@
-import React, { useState } from "react";
-import "./Contact.css";
+import React, { useState } from 'react';
+import './Contact.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
   });
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("sending");
+    setStatus('sending');
 
-    // Opens user's email client with message pre-filled
-    const subject = encodeURIComponent(formData.subject);
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`,
-    );
+    try {
+      const response = await fetch('https://formspree.io/f/mqedbvoe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message
+        })
+      });
 
-    // Use anchor element instead of window.location to avoid page navigation
-    const mailtoLink = document.createElement("a");
-    mailtoLink.href = `mailto:rishik@itjobworks.com?subject=${subject}&body=${body}`;
-    mailtoLink.click();
-
-    setStatus("success");
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    setTimeout(() => setStatus(""), 4000);
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus(''), 5000);
+      } else {
+        setStatus('error');
+      }
+    // eslint-disable-next-line no-unused-vars
+    } catch (error) {
+      setStatus('error');
+    }
   };
 
   return (
@@ -45,14 +57,14 @@ const Contact = () => {
           <span className="section-label">Get In Touch</span>
           <h2 className="section-title">Let's Work Together</h2>
           <p className="section-description">
-            I'm currently open to new opportunities and exciting projects.
-            Whether you have a question or just want to say hi, feel free to
-            reach out!
+            I'm currently open to new opportunities and exciting projects. 
+            Whether you have a question or just want to say hi, feel free to reach out!
           </p>
         </div>
 
         <div className="contact-content">
           <div className="contact-info">
+
             <div className="info-card">
               <div className="info-icon">💼</div>
               <h3>Current Role</h3>
@@ -64,17 +76,20 @@ const Contact = () => {
             <div className="info-card">
               <div className="info-icon">📧</div>
               <h3>Email</h3>
-              <a href="mailto:rishik@itjobworks.com" className="info-link">
-                rishik@itjobworks.com
+              <a 
+                href="mailto:rishikvadapalli@gmail.com"
+                className="info-link"
+              >
+                rishikvadapalli@gmail.com
               </a>
             </div>
 
             <div className="info-card">
               <div className="info-icon">💼</div>
               <h3>LinkedIn</h3>
-              <a
-                href="https://www.linkedin.com/in/rishikvadapalli-9232b3198"
-                target="_blank"
+              <a 
+                href="https://www.linkedin.com/in/rishikvadapalli-9232b3198" 
+                target="_blank" 
                 rel="noopener noreferrer"
                 className="info-link"
               >
@@ -85,9 +100,9 @@ const Contact = () => {
             <div className="info-card">
               <div className="info-icon">💻</div>
               <h3>GitHub</h3>
-              <a
-                href="https://github.com/Rishik27"
-                target="_blank"
+              <a 
+                href="https://github.com/Rishik27" 
+                target="_blank" 
                 rel="noopener noreferrer"
                 className="info-link"
               >
@@ -98,9 +113,10 @@ const Contact = () => {
             <div className="social-links">
               <h3>Connect With Me</h3>
               <div className="social-icons">
+
                 {/* Email - NO target="_blank" for mailto */}
                 <a
-                  href="mailto:rishik@itjobworks.com"
+                  href="mailto:rishikvadapalli@gmail.com"
                   className="social-icon"
                   title="Email"
                 >
@@ -128,6 +144,7 @@ const Contact = () => {
                 >
                   <span>💻</span>
                 </a>
+
               </div>
             </div>
           </div>
@@ -186,29 +203,25 @@ const Contact = () => {
                 />
               </div>
 
-              <button
-                type="submit"
+              <button 
+                type="submit" 
                 className="submit-btn"
-                disabled={status === "sending"}
+                disabled={status === 'sending'}
               >
-                {status === "sending"
-                  ? "Opening Email..."
-                  : status === "success"
-                    ? "Email Opened! ✓"
-                    : "Send Message"}
+                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Message Sent! ✓' : 'Send Message'}
               </button>
 
-              {status === "success" && (
+              {status === 'success' && (
                 <div className="success-message">
-                  ✅ Your email client opened with the message pre-filled — just
-                  hit Send!
+                  ✅ Message sent successfully! I'll get back to you soon.
                 </div>
               )}
 
-              <p className="form-note">
-                * This will open your default email client with the message
-                pre-filled.
-              </p>
+              {status === 'error' && (
+                <div className="error-message">
+                  ❌ Something went wrong. Please email me directly at rishikvadapalli@gmail.com
+                </div>
+              )}
             </form>
           </div>
         </div>
