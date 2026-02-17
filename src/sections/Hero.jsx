@@ -81,7 +81,7 @@ const Hero = () => {
         <div className="hero-image-container">
           <div className="hero-image-wrapper">
             <img 
-              src="/my-portfolio/profile.jpeg"
+              src="/profile.jpeg"
               alt="Rishik Vadapalli" 
               className="hero-image"
               onError={(e) => {
