@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './Contact.css';
 
@@ -44,7 +45,6 @@ const Contact = () => {
       } else {
         setStatus('error');
       }
-    // eslint-disable-next-line no-unused-vars
     } catch (error) {
       setStatus('error');
     }
