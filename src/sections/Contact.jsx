@@ -20,37 +20,19 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here (e.g., EmailJS, Formspree, etc.)
     setStatus('sending');
-    
-    // Simulated submission
-    setTimeout(() => {
-      setStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      setTimeout(() => setStatus(''), 3000);
-    }, 1500);
-  };
 
-  const socialLinks = [
-    { 
-      name: 'Email', 
-      icon: '✉️', 
-      url: 'mailto:rishik@itjobworks.com',
-      display: 'rishik@itjobworks.com'
-    },
-    { 
-      name: 'LinkedIn', 
-      icon: '💼', 
-      url: 'https://www.linkedin.com/in/rishik-vadapalli-9232b3198/',
-      display: 'linkedin.com/in/rishikvadapalli'
-    },
-    { 
-      name: 'GitHub', 
-      icon: '💻', 
-      url: 'https://github.com/Rishik27',
-      display: 'github.com/Rishik27'
-    }
-  ];
+    // Opens user's email client with message pre-filled
+    const subject = encodeURIComponent(formData.subject);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+    window.location.href = `mailto:rishikvadapalli@gmail.com?subject=${subject}&body=${body}`;
+
+    setStatus('success');
+    setFormData({ name: '', email: '', subject: '', message: '' });
+    setTimeout(() => setStatus(''), 4000);
+  };
 
   return (
     <section className="contact" id="contact">
@@ -66,6 +48,7 @@ const Contact = () => {
 
         <div className="contact-content">
           <div className="contact-info">
+
             <div className="info-card">
               <div className="info-icon">💼</div>
               <h3>Current Role</h3>
@@ -73,11 +56,15 @@ const Contact = () => {
               <p className="info-company">S&P Global</p>
             </div>
 
+            {/* No target="_blank" on mailto links - that's what was breaking it */}
             <div className="info-card">
               <div className="info-icon">📧</div>
               <h3>Email</h3>
-              <a href="mailto:rishik@itjobworks.com" className="info-link">
-                rishik@itjobworks.com
+              <a 
+                href="mailto:rishikvadapalli@gmail.com"
+                className="info-link"
+              >
+                rishikvadapalli@gmail.com
               </a>
             </div>
 
@@ -85,12 +72,12 @@ const Contact = () => {
               <div className="info-icon">💼</div>
               <h3>LinkedIn</h3>
               <a 
-                href="https://www.linkedin.com/in/rishik-vadapalli-9232b3198/" 
+                href="https://www.linkedin.com/in/rishikvadapalli-9232b3198" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="info-link"
               >
-                View Profile
+                View Profile →
               </a>
             </div>
 
@@ -103,25 +90,45 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="info-link"
               >
-                github.com/Rishik27
+                github.com/Rishik27 →
               </a>
             </div>
 
             <div className="social-links">
               <h3>Connect With Me</h3>
               <div className="social-icons">
-                {socialLinks.map(link => (
-                  <a
-                    key={link.name}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-icon"
-                    title={link.name}
-                  >
-                    <span>{link.icon}</span>
-                  </a>
-                ))}
+
+                {/* Email - NO target="_blank" for mailto */}
+                <a
+                  href="mailto:rishikvadapalli@gmail.com"
+                  className="social-icon"
+                  title="Email"
+                >
+                  <span>✉️</span>
+                </a>
+
+                {/* LinkedIn */}
+                <a
+                  href="https://www.linkedin.com/in/rishikvadapalli-9232b3198"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                  title="LinkedIn"
+                >
+                  <span>💼</span>
+                </a>
+
+                {/* GitHub */}
+                <a
+                  href="https://github.com/Rishik27"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="social-icon"
+                  title="GitHub"
+                >
+                  <span>💻</span>
+                </a>
+
               </div>
             </div>
           </div>
@@ -185,14 +192,18 @@ const Contact = () => {
                 className="submit-btn"
                 disabled={status === 'sending'}
               >
-                {status === 'sending' ? 'Sending...' : status === 'success' ? 'Sent! ✓' : 'Send Message'}
+                {status === 'sending' ? 'Opening Email...' : status === 'success' ? 'Email Opened! ✓' : 'Send Message'}
               </button>
 
               {status === 'success' && (
                 <div className="success-message">
-                  Thank you for your message! I'll get back to you soon.
+                  ✅ Your email client opened with the message pre-filled — just hit Send!
                 </div>
               )}
+
+              <p className="form-note">
+                * This will open your default email client with the message pre-filled.
+              </p>
             </form>
           </div>
         </div>
@@ -200,7 +211,7 @@ const Contact = () => {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2026 Rishik Vadapalli. All rights reserved.</p>
+          <p>&copy; 2025 Rishik Vadapalli. All rights reserved.</p>
         </div>
       </footer>
     </section>
