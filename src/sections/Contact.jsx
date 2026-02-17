@@ -72,15 +72,15 @@ const Contact = () => {
               <p className="info-company">S&P Global</p>
             </div>
 
-            {/* No target="_blank" on mailto links - that's what was breaking it */}
+            {/* Email card - NO target="_blank" on mailto links */}
             <div className="info-card">
               <div className="info-icon">📧</div>
               <h3>Email</h3>
               <a 
-                href="mailto:rishikvadapalli@gmail.com"
+                href="mailto:rishik@itjobworks.com"
                 className="info-link"
               >
-                rishikvadapalli@gmail.com
+                rishik@itjobworks.com
               </a>
             </div>
 
@@ -114,9 +114,9 @@ const Contact = () => {
               <h3>Connect With Me</h3>
               <div className="social-icons">
 
-                {/* Email - NO target="_blank" for mailto */}
+                {/* Email icon - NO target="_blank" */}
                 <a
-                  href="mailto:rishikvadapalli@gmail.com"
+                  href="mailto:rishik@itjobworks.com"
                   className="social-icon"
                   title="Email"
                 >
@@ -219,7 +219,7 @@ const Contact = () => {
 
               {status === 'error' && (
                 <div className="error-message">
-                  ❌ Something went wrong. Please email me directly at rishikvadapalli@gmail.com
+                  ❌ Something went wrong. Please email me directly at <a href="mailto:rishik@itjobworks.com">rishik@itjobworks.com</a>
                 </div>
               )}
             </form>
@@ -229,7 +229,7 @@ const Contact = () => {
 
       <footer className="footer">
         <div className="footer-content">
-          <p>&copy; 2025 Rishik Vadapalli. All rights reserved.</p>
+          <p>&copy; 2026 Rishik Vadapalli. All rights reserved.</p>
         </div>
       </footer>
     </section>
