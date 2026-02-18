@@ -32,7 +32,7 @@ const Hero = () => {
 
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [displayText, isDeleting, loopNum]);
+  }, [displayText, isDeleting, loopNum, roles, typingSpeed]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -42,42 +42,47 @@ const Hero = () => {
   return (
     <section className="hero" id="home">
       <div className="hero-background"></div>
-      
+
       <div className="hero-content">
+        {/* Left: Text */}
         <div className="hero-text">
           <span className="hero-greeting">Hey there! 👋</span>
-          <h1 className="hero-name">Rishik Vadapalli</h1>
+          <h1 className="hero-name">
+            I'm <span className="highlight">Rishik</span>
+            <br />
+            <span className="highlight-green">Vadapalli</span>
+          </h1>
           <h2 className="hero-role">
-            I'm a <span className="typing-text">{displayText}</span>
+            <span className="typing-text">{displayText}</span>
             <span className="cursor">|</span>
           </h2>
           <p className="hero-description">
-            Full Stack Software Developer with 3+ years of experience building scalable, 
+            Full Stack Software Developer with 3+ years of experience building scalable,
             production-ready web applications using React, JavaScript, and cloud technologies.
           </p>
-          
+
           <div className="hero-cta">
-            <button 
-              className="btn btn-primary"
-              onClick={() => scrollToSection('projects')}
-            >
+            <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
               View My Work
             </button>
-            <button 
-              className="btn btn-secondary"
-              onClick={() => scrollToSection('contact')}
-            >
+            <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>
               Get In Touch
             </button>
           </div>
         </div>
 
+        {/* Right: Profile Image */}
         <div className="hero-illustration">
-          <img 
-            src={`${import.meta.env.BASE_URL}profile.jpeg`}
-            alt="Rishik Vadapalli" 
-            className="hero-profile-image"
-          />
+          <div className="profile-ring-wrapper">
+            <div className="profile-glow"></div>
+            <div className="profile-ring">
+              <img
+                src={`${import.meta.env.BASE_URL}profile.jpeg`}
+                alt="Rishik Vadapalli"
+                className="profile-img"
+              />
+            </div>
+          </div>
         </div>
       </div>
 
