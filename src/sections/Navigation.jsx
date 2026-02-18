@@ -65,16 +65,6 @@ const Navigation = () => {
               </button>
             </li>
           ))}
-
-          <li className="nav-item nav-cta" style={{ animationDelay: '0.56s' }}>
-            <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
-              download="Rishik_Vadapalli_Resume.pdf"
-              className="resume-btn"
-            >
-              ⬇ Resume
-            </a>
-          </li>
         </ul>
 
         <button

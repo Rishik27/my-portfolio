@@ -50,16 +50,6 @@ const About = () => {
                 </div>
               </div>
             </div>
-
-            {/* Resume Download Button */}
-            <a
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
-              download="Rishik_Vadapalli_Resume.pdf"
-              className="resume-btn"
-            >
-              <span className="resume-btn-icon">⬇</span>
-              Download Resume
-            </a>
           </div>
 
           <div className="about-stats">

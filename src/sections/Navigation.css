@@ -98,29 +98,6 @@
 
 .nav-cta { margin-left: 0.5rem; }
 
-.resume-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  padding: 0.45rem 1rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #ffe66d;
-  background: rgba(255, 230, 109, 0.06);
-  border: 1.5px solid #ffe66d;
-  border-radius: 6px;
-  text-decoration: none;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  transition: all 0.25s ease;
-}
-
-.resume-btn:hover {
-  background: rgba(255, 230, 109, 0.14);
-  box-shadow: 0 0 14px rgba(255, 230, 109, 0.3);
-  transform: translateY(-1px);
-}
 
 .hamburger {
   display: none;
@@ -194,5 +171,4 @@
   }
 
   .nav-cta { margin-left: 0; width: 100%; }
-  .resume-btn { width: 100%; justify-content: center; font-size: 0.9rem; }
 }

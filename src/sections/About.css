@@ -96,61 +96,6 @@
   line-height: 1.6;
 }
 
-/* ── Resume Download Button ──────────────────────────────────── */
-.resume-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin-top: 2rem;
-  padding: 0.9rem 2.2rem;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #ffe66d;
-  background: rgba(255, 230, 109, 0.07);
-  border: 2px solid #ffe66d;
-  border-radius: 12px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 16px rgba(255, 230, 109, 0.15);
-  position: relative;
-  overflow: hidden;
-}
-
-.resume-btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  background: rgba(255, 230, 109, 0.12);
-  transform: translate(-50%, -50%);
-  transition: width 0.55s ease, height 0.55s ease;
-}
-
-.resume-btn:hover::before {
-  width: 350px;
-  height: 350px;
-}
-
-.resume-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 28px rgba(255, 230, 109, 0.35);
-  background: rgba(255, 230, 109, 0.12);
-}
-
-.resume-btn-icon {
-  font-size: 1.1rem;
-  animation: bounceDown 1.8s ease-in-out infinite;
-}
-
-@keyframes bounceDown {
-  0%, 100% { transform: translateY(0); }
-  50%       { transform: translateY(4px); }
-}
-
 /* ── Stats ───────────────────────────────────────────────────── */
 .about-stats {
   display: grid;
@@ -244,8 +189,4 @@
     font-size: 2.5rem;
   }
 
-  .resume-btn {
-    width: 100%;
-    justify-content: center;
-  }
 }
