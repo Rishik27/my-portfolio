@@ -8,7 +8,7 @@ const Hero = () => {
   const [typingSpeed, setTypingSpeed] = useState(150);
 
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  const roles = ['Full Stack Developer'];
+  const roles = ['Full Stack Developer', 'React Specialist', 'Cloud Engineer', 'Problem Solver'];
 
   useEffect(() => {
     const handleTyping = () => {
@@ -64,15 +64,6 @@ const Hero = () => {
             Full Stack Software Developer with 3+ years of experience building scalable,
             production-ready web applications using React, JavaScript, and cloud technologies.
           </p>
-
-          <div className="hero-cta">
-            <button className="btn btn-primary" onClick={() => scrollToSection('projects')}>
-              View My Work
-            </button>
-            <button className="btn btn-secondary" onClick={() => scrollToSection('contact')}>
-              Contact Me
-            </button>
-          </div>
         </div>
 
         {/* Right: Profile Image */}
