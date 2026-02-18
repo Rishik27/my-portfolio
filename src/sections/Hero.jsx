@@ -7,7 +7,7 @@ const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const roles = ['Full Stack Developer', 'React Specialist', 'Cloud Engineer', 'Problem Solver'];
+  const roles = ['Full Stack Developer'];
 
   useEffect(() => {
     const handleTyping = () => {
@@ -44,18 +44,21 @@ const Hero = () => {
       <div className="hero-background"></div>
 
       <div className="hero-content">
-        {/* Left: Text */}
+        {/* Left: Text — ordered: greeting → name → role → description → buttons */}
         <div className="hero-text">
           <span className="hero-greeting">Hey there! 👋</span>
+
           <h1 className="hero-name">
             I'm <span className="highlight">Rishik</span>
             <br />
             <span className="highlight-green">Vadapalli</span>
           </h1>
+
           <h2 className="hero-role">
             <span className="typing-text">{displayText}</span>
             <span className="cursor">|</span>
           </h2>
+
           <p className="hero-description">
             Full Stack Software Developer with 3+ years of experience building scalable,
             production-ready web applications using React, JavaScript, and cloud technologies.

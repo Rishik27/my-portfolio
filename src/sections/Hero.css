@@ -12,16 +12,6 @@
   box-sizing: border-box;
 }
 
-/* Background */
-.hero-background {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  background-image: url('/my-portfolio/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
 
 .hero-background::before {
   content: '';
