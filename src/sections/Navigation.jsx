@@ -10,7 +10,7 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ['home', 'about', 'experience', 'projects', 'skills', 'contact'];
+      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -33,17 +33,19 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { id: 'home',     label: 'Home' },
-    { id: 'about',    label: 'About' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'contact',  label: 'Contact' },
+    { id: 'home',       label: 'Home' },
+    { id: 'about',      label: 'About Me' },
+    { id: 'skills',     label: 'Technical Expertise' },
+    { id: 'experience', label: 'Education History' },
+    { id: 'projects',   label: 'Projects' },
+    { id: 'contact',    label: 'Contact' },
   ];
 
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
 
-        {/* Left: Logo / name */}
+        {/* Left: Logo */}
         <div className="nav-logo" onClick={() => scrollToSection('home')}>
           <span className="logo-text">{'<RishikV />'}</span>
         </div>
@@ -54,7 +56,7 @@ const Navigation = () => {
             <li
               key={item.id}
               className="nav-item"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.08}s` }}
             >
               <button
                 className={`nav-link ${activeSection === item.id ? 'active' : ''}`}
@@ -65,8 +67,8 @@ const Navigation = () => {
             </li>
           ))}
 
-          {/* Small resume download button */}
-          <li className="nav-item nav-cta" style={{ animationDelay: '0.4s' }}>
+          {/* Resume download */}
+          <li className="nav-item nav-cta" style={{ animationDelay: '0.48s' }}>
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
               download="Rishik_Vadapalli_Resume.pdf"
@@ -77,7 +79,7 @@ const Navigation = () => {
           </li>
         </ul>
 
-        {/* Hamburger (mobile) */}
+        {/* Hamburger */}
         <button
           className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
