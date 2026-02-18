@@ -47,7 +47,7 @@ const Navigation = () => {
       <div className="nav-container">
 
         <div className="nav-logo" onClick={() => scrollToSection('home')}>
-          <span className="logo-text">{'<RishikV />'}</span>
+          <span className="logo-text">{'<RV/>'}</span>
         </div>
 
         <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
