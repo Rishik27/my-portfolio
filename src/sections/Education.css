@@ -19,7 +19,6 @@
   margin: 0 auto;
 }
 
-/* ── Card ── */
 .education-timeline {
   margin-top: 3rem;
 }
@@ -42,7 +41,6 @@
   box-shadow: 0 20px 60px rgba(78, 205, 196, 0.08);
 }
 
-/* ── Left side ── */
 .edu-left {
   display: flex;
   flex-direction: column;
@@ -105,7 +103,6 @@
   width: 100%;
 }
 
-/* ── Right side: courses ── */
 .edu-right {
   display: flex;
   flex-direction: column;
@@ -145,13 +142,11 @@
   background: rgba(78, 205, 196, 0.06);
 }
 
-/* ── Keyframes ── */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── Responsive ── */
 @media (max-width: 900px) {
   .edu-card {
     grid-template-columns: 1fr;

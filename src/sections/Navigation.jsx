@@ -45,12 +45,10 @@ const Navigation = () => {
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
 
-        {/* Left: Logo */}
         <div className="nav-logo" onClick={() => scrollToSection('home')}>
           <span className="logo-text">{'<RishikV />'}</span>
         </div>
 
-        {/* Right: nav links + resume btn */}
         <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           {navItems.map((item, index) => (
             <li
@@ -67,7 +65,6 @@ const Navigation = () => {
             </li>
           ))}
 
-          {/* Resume download */}
           <li className="nav-item nav-cta" style={{ animationDelay: '0.48s' }}>
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
@@ -79,7 +76,6 @@ const Navigation = () => {
           </li>
         </ul>
 
-        {/* Hamburger */}
         <button
           className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}

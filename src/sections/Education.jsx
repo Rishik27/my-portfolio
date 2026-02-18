@@ -12,6 +12,7 @@ const Education = () => {
 
         <div className="education-timeline">
           <div className="edu-card">
+
             {/* Left: degree & school */}
             <div className="edu-left">
               <div className="edu-icon">🎓</div>
@@ -28,29 +29,28 @@ const Education = () => {
 
             {/* Right: coursework */}
             <div className="edu-right">
-              <div className="coursework-block">
-                <h4 className="coursework-title">Graduate Coursework</h4>
-                <div className="course-tags">
-                  {[
-                    'Algorithms',
-                    'Software Engineering',
-                    'Cloud Computing',
-                    'Database Systems',
-                    'Mobile Application Development',
-                    'Theory of Computing',
-                    'Software Engineering I & II',
-                    'Cloud Web Applications Development',
-                    'Applications Database Systems',
-                    'Mobile Apps Programming',
-                    'Cyber Infrastructure & Cloud Computing',
-                    'Enterprise Web Programming',
-                    'Incident Analysis & Response',
-                  ].map((course) => (
-                    <span key={course} className="course-tag">{course}</span>
-                  ))}
-                </div>
+              <h4 className="coursework-title">Graduate Coursework</h4>
+              <div className="course-tags">
+                {[
+                  'Algorithms',
+                  'Software Engineering',
+                  'Cloud Computing',
+                  'Database Systems',
+                  'Mobile Application Development',
+                  'Theory of Computing',
+                  'Software Engineering I & II',
+                  'Cloud Web Applications Development',
+                  'Applications Database Systems',
+                  'Mobile Apps Programming',
+                  'Cyber Infrastructure & Cloud Computing',
+                  'Enterprise Web Programming',
+                  'Incident Analysis & Response',
+                ].map((course) => (
+                  <span key={course} className="course-tag">{course}</span>
+                ))}
               </div>
             </div>
+
           </div>
         </div>
       </div>
