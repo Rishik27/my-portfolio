@@ -10,7 +10,7 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
-      const sections = ['home', 'about', 'skills', 'experience', 'projects', 'contact'];
+      const sections = ['home', 'about', 'skills', 'education', 'experience', 'projects', 'contact'];
       const current = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -36,7 +36,8 @@ const Navigation = () => {
     { id: 'home',       label: 'Home' },
     { id: 'about',      label: 'About Me' },
     { id: 'skills',     label: 'Technical Expertise' },
-    { id: 'experience', label: 'Education History' },
+    { id: 'education',  label: 'Education History' },
+    { id: 'experience', label: 'Work Experience' },
     { id: 'projects',   label: 'Projects' },
     { id: 'contact',    label: 'Contact' },
   ];
@@ -65,7 +66,7 @@ const Navigation = () => {
             </li>
           ))}
 
-          <li className="nav-item nav-cta" style={{ animationDelay: '0.48s' }}>
+          <li className="nav-item nav-cta" style={{ animationDelay: '0.56s' }}>
             <a
               href={`${import.meta.env.BASE_URL}resume.pdf`}
               download="Rishik_Vadapalli_Resume.pdf"

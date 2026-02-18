@@ -14,10 +14,10 @@ function App() {
       <Hero />
       <About />
       <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
       <Education />
+      <Experience />
+      <Projects />
+      <Contact />
     </>
   )
 }
