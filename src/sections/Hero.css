@@ -72,7 +72,6 @@
   font-family: 'Space Grotesk', 'Outfit', -apple-system, sans-serif;
 }
 
-/* "Rishik" — pink/coral */
 .highlight {
   background: linear-gradient(135deg, #ff6b6b 0%, #ff8e53 100%);
   -webkit-background-clip: text;
@@ -80,7 +79,6 @@
   background-clip: text;
 }
 
-/* "Vadapalli" — teal/green */
 .highlight-green {
   background: linear-gradient(135deg, #4ecdc4 0%, #43b89c 100%);
   -webkit-background-clip: text;
@@ -88,12 +86,11 @@
   background-clip: text;
 }
 
-/* Typing role */
 .hero-role {
   font-size: clamp(1.2rem, 2.2vw, 1.6rem);
   color: #4ecdc4;
   font-weight: 700;
-  margin: 0 0 1.2rem;
+  margin: 0 0 1rem;
   min-height: 2.2rem;
   font-family: 'Space Grotesk', sans-serif;
 }
@@ -117,10 +114,40 @@
   line-height: 1.8;
   color: #8892b0;
   max-width: 480px;
-  margin-bottom: 2rem;
+  margin-bottom: 1.6rem;
 }
 
-/* CTA Buttons */
+/* ── Section Nav Pill Buttons ────────────────────────────────── */
+.hero-nav-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 1.8rem;
+}
+
+.nav-pill {
+  padding: 0.5rem 1.15rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #a8b2d1;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+.nav-pill:hover {
+  color: #4ecdc4;
+  border-color: #4ecdc4;
+  background: rgba(78, 205, 196, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(78, 205, 196, 0.18);
+}
+
+/* ── CTA Buttons ─────────────────────────────────────────────── */
 .hero-cta {
   display: flex;
   gap: 1.2rem;
@@ -196,7 +223,6 @@
   height: 320px;
 }
 
-/* Ambient glow beneath */
 .profile-glow {
   position: absolute;
   bottom: -24px;
@@ -211,7 +237,6 @@
   pointer-events: none;
 }
 
-/* Gradient ring */
 .profile-ring {
   position: absolute;
   inset: 0;
@@ -222,8 +247,7 @@
     0 0 35px rgba(255, 107, 107, 0.4),
     0 0 35px rgba(78, 205, 196, 0.4);
   z-index: 1;
-  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.4s ease;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
 }
 
 .profile-ring:hover {
@@ -323,18 +347,15 @@
     gap: 2.5rem;
   }
 
-  .hero-text {
-    align-items: center;
-  }
+  .hero-text { align-items: center; }
 
   .hero-description {
     margin-left: auto;
     margin-right: auto;
   }
 
-  .hero-cta {
-    justify-content: center;
-  }
+  .hero-nav-btns { justify-content: center; }
+  .hero-cta { justify-content: center; }
 
   .profile-ring-wrapper {
     width: 220px;
@@ -355,4 +376,6 @@
     max-width: 280px;
     text-align: center;
   }
+
+  .nav-pill { font-size: 0.76rem; padding: 0.45rem 0.9rem; }
 }

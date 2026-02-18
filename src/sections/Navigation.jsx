@@ -19,9 +19,7 @@ const Navigation = () => {
         }
         return false;
       });
-      if (current) {
-        setActiveSection(current);
-      }
+      if (current) setActiveSection(current);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -35,25 +33,26 @@ const Navigation = () => {
   };
 
   const navItems = [
-    { id: 'home', label: 'Home' },
-    { id: 'about', label: 'About' },
-    { id: 'experience', label: 'Experience' },
+    { id: 'home',     label: 'Home' },
+    { id: 'about',    label: 'About' },
     { id: 'projects', label: 'Projects' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'contact', label: 'Contact' }
+    { id: 'contact',  label: 'Contact' },
   ];
 
   return (
     <nav className={`navigation ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
+
+        {/* Left: Logo / name */}
         <div className="nav-logo" onClick={() => scrollToSection('home')}>
           <span className="logo-text">{'<RishikV />'}</span>
         </div>
 
+        {/* Right: nav links + resume btn */}
         <ul className={`nav-menu ${isMobileMenuOpen ? 'active' : ''}`}>
           {navItems.map((item, index) => (
-            <li 
-              key={item.id} 
+            <li
+              key={item.id}
               className="nav-item"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
@@ -65,19 +64,21 @@ const Navigation = () => {
               </button>
             </li>
           ))}
-          <li className="nav-item nav-cta">
-            <a 
-              href="/my-portfolio/resume.pdf" 
+
+          {/* Small resume download button */}
+          <li className="nav-item nav-cta" style={{ animationDelay: '0.4s' }}>
+            <a
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              download="Rishik_Vadapalli_Resume.pdf"
               className="resume-btn"
-              target="_blank"
-              rel="noopener noreferrer"
             >
-              Resume
+              ⬇ Resume
             </a>
           </li>
         </ul>
 
-        <button 
+        {/* Hamburger (mobile) */}
+        <button
           className={`hamburger ${isMobileMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
